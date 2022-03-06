@@ -79,33 +79,33 @@ public class BinaryTree
      * @param position current position in the given byte array
      * @return a binaryTree
      */
-    private static final int COMA = 44;
-    private static final int OPEN = 123;
-    private static final int CLOSE = 125;
-    private static BinaryTree deserializeTreeInternal(byte[] str, int position){
-        if (str == null || position == str.length  -1)
-            return null;
+//     private static final int COMA = 44;
+//     private static final int OPEN = 123;
+//     private static final int CLOSE = 125;
+//     private static BinaryTree deserializeTreeInternal(byte[] str, int position){
+//         if (str == null || position == str.length  -1)
+//             return null;
 
 
-//        for (int i= 0;i< str.length;i++){
-//            System.out.print(i +" - " + (char) str[i]);
-//            System.out.println(" - " + str[i]);
-//        }
+// //        for (int i= 0;i< str.length;i++){
+// //            System.out.print(i +" - " + (char) str[i]);
+// //            System.out.println(" - " + str[i]);
+// //        }
 
 
 
-        int opener = findNextChar(str, position, OPEN);
-        int coma = findNextChar(str, position, COMA);
-        int closer = findNextChar(str, position, CLOSE);
+//         int opener = findNextChar(str, position, OPEN);
+//         int coma = findNextChar(str, position, COMA);
+//         int closer = findNextChar(str, position, CLOSE);
 
-        BinaryTree root = builder(str, position+1, Math.min(opener, closer));;
-        if(opener - coma == 1)
-            root.left = deserializeTreeInternal(str, opener);
-        if(closer - coma == 1)
-            root.right = deserializeTreeInternal(str, closer);
+//         BinaryTree root = builder(str, position+1, Math.min(opener, closer));;
+//         if(opener - coma == 1)
+//             root.left = deserializeTreeInternal(str, opener);
+//         if(closer - coma == 1)
+//             root.right = deserializeTreeInternal(str, closer);
 
-		return root;
-    }
+// 		return root;
+//     }
 
     private static int findNextChar(byte[] str, int position, int charValue) {
         int index = position + 1;
